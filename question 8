@@ -1,0 +1,7 @@
+SELECT
+  device_type,
+  regexp_replace(Stats_Access_Link, '^.*[hH][tT]{2}[pP][sS]?[:/]{2}([^/]*\\.)?([^./]+[.][^./]+)[/]?.*$', E'\\2', 'g') AS url
+FROM
+  stats
+WHERE
+  Stats_Access_Link IS NOT NULL;
